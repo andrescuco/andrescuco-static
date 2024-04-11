@@ -1,7 +1,8 @@
 :root {
   background: #000;
   color: #fff;
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: 1.25rem;
   line-height: 30px;
 }
 
@@ -27,7 +28,14 @@
 }
 
 body {
-  padding: 6vw 9vw 9vw 9vw;
+  padding: 6vw 0 9vw 9vw;
+}
+
+@media (max-width: 1024px) {
+  body {
+    /* padding: 6vw 6vw 9vw 6vw; */
+    padding: 6vw 9vw 9vw 9vw;
+  }
 }
 
 main {
@@ -38,20 +46,42 @@ main {
 
 .writing-container {
   display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 
-.writing-left-side {
+.writing-container .main-content {
   max-width: 50ch;
 }
 
-.writing-right-side {
-  max-width: 50ch;
+.writing-container .supp-content {
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
-  padding-left: 3vw;
+  margin: 0 1.25rem 0 1.25rem;
 }
+
+.responsive-img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* @media (max-width: 768px) { */
+@media (max-width: 1024px) {
+  .writing-container {
+    flex-direction: column;
+  }
+
+  .writing-container .main-content {
+    max-width: 100%;
+  }
+
+  .writing-container .supp-content {
+    margin: 0 0 1.25rem 0;
+  }
+}
+
+/* End of article styles */
 
 p:not(:last-child) {
   margin-bottom: 30px;
